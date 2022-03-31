@@ -32,6 +32,7 @@ public class PictureService {
     }
 
     public Picture findPictureById(Long id){
+        System.out.println("hallo");
         return pictureRepo.findPictureById(id)
                 .orElseThrow(() -> new UserNotFoundException("User by id " + id + " was not found"));
     }
