@@ -5,6 +5,7 @@ import ch.M306_LB.gallery.model.Picture;
 import ch.M306_LB.gallery.repo.PictureRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -19,7 +20,6 @@ public class PictureService {
     }
 
     public Picture addPicture(Picture picture){
-        System.out.println(picture);
         return pictureRepo.save(picture);
     }
 
@@ -32,11 +32,11 @@ public class PictureService {
     }
 
     public Picture findPictureById(Long id){
-        System.out.println("hallo");
         return pictureRepo.findPictureById(id)
                 .orElseThrow(() -> new UserNotFoundException("User by id " + id + " was not found"));
     }
 
+    @Transactional
     public void deletePicture(Long id){
         pictureRepo.deletePictureById(id);
     }

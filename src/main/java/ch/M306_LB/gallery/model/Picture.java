@@ -15,8 +15,7 @@ public class Picture {
     private Date fileDateTime;
     private Integer fileSize;
     private String fileMimeTyp;
-    private Integer height;
-    private Integer width;
+
 
     public String getFileName() {
         return fileName;
@@ -48,22 +47,6 @@ public class Picture {
 
     public void setFileMimeTyp(String fileMimeTyp) {
         this.fileMimeTyp = fileMimeTyp;
-    }
-
-    public Integer getHeight() {
-        return height;
-    }
-
-    public void setHeight(Integer height) {
-        this.height = height;
-    }
-
-    public Integer getWidth() {
-        return width;
-    }
-
-    public void setWidth(Integer width) {
-        this.width = width;
     }
 
     public Long getId() {
